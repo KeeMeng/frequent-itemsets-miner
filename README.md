@@ -1,9 +1,11 @@
 # frequent-itemsets-miner
 Simplest unoptimised way to find large itemsets from item list or binary matrix
 
-Allows you to change the support threshold for the large itemsets. 
+Allows you to change the support threshold for the large itemsets. (First row input)
 
-Example input for item list format: 
+
+## Usage
+### Example input for item list format: 
 ```
 2
 e, f
@@ -22,7 +24,8 @@ b, d, f
 a, d, f
 ```
 
-Example input for binary matrix format: 
+
+### Example input for binary matrix format: 
 ```
 2
 Avatar2;Fabelmans;Scream6;Shazam!;TheFirstSlamDunk;Quantumania
@@ -34,3 +37,5 @@ Avatar2;Fabelmans;Scream6;Shazam!;TheFirstSlamDunk;Quantumania
 111100
 101010
 ```
+
+Data source: HKUST CORE1232
