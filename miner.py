@@ -53,9 +53,9 @@ for size in range(1, max_size + 1):
 	# iterate through itemsets
 	for itemset in itemsets:
 		support = 0
-		# check if the itemset is in each record
-		for record in transcations:
-			if all(item in record for item in itemset):
+		# check if the itemset is in each transaction
+		for transaction in transcations:
+			if all(item in transaction for item in itemset):
 				support += 1
 				
 		if support >= threshold:
