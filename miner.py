@@ -4,6 +4,7 @@ max_size = 0
 transcations = []
 threshold = int(input("Input threshold: "))
 
+# parsing
 line = input()
 if ";" in line:
 	all_items = line.split(";")
@@ -27,7 +28,12 @@ else:
 		
 	all_items.sort()
 
+# print(transcations)
+# print(all_items)
+
+# finding large itemsets
 for size in range(1, max_size + 1):
+	print(f"Size {size} large itemsets:")
 	itemsets = combinations(all_items, size)
 	for itemset in itemsets:
 		support = 0
