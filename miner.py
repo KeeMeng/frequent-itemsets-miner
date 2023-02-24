@@ -33,8 +33,9 @@ else:
 
 # finding large itemsets
 for size in range(1, max_size + 1):
-	print(f"Size {size} large itemsets:")
+	empty = True
 	itemsets = combinations(all_items, size)
+	
 	for itemset in itemsets:
 		support = 0
 		for record in transcations:
@@ -42,4 +43,11 @@ for size in range(1, max_size + 1):
 				support += 1
 				
 		if support >= threshold:
-			print(f"{{{', '.join(itemset)}}}: {support}")
+			if empty:
+				print(f"Size {size} large itemsets:")
+				empty = False
+				
+			print(f"{{{','.join(itemset)}}}: {support}")
+	
+	if empty:
+		exit()
