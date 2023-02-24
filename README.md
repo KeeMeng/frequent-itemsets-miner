@@ -21,3 +21,16 @@ c, m
 b, d, f
 a, d, f
 ```
+
+Example input for binary matrix format: 
+```
+2
+Avatar2;Fabelmans;Scream6;Shazam!;TheFirstSlamDunk;Quantumania
+100001
+001010
+010011
+010011
+110001
+111100
+101010
+```
