@@ -32,10 +32,23 @@ else:
 # print(transcations)
 # print(all_items)
 
+# removing small items
+all_large_items = []
+for item in all_items:
+	support = 0
+	for transaction in transcations:
+		if item in transaction:
+			support += 1
+			if support >= threshold:
+				all_large_items.append(item)
+				break
+
+# print(all_large_items)
+
 # finding large itemsets
 for size in range(1, max_size + 1):
 	empty = True
-	itemsets = combinations(all_items, size)
+	itemsets = combinations(all_large_items, size)
 	
 	# iterate through itemsets
 	for itemset in itemsets:
