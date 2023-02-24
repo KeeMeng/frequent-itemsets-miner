@@ -4,9 +4,10 @@ max_size = 0
 transcations = []
 threshold = int(input("Input threshold: "))
 
-# parsing
+# parsing input
 line = input()
 if ";" in line:
+	# first row contains header
 	all_items = line.split(";")
 	line = input()
 	while line != "":
@@ -36,8 +37,10 @@ for size in range(1, max_size + 1):
 	empty = True
 	itemsets = combinations(all_items, size)
 	
+	# iterate through itemsets
 	for itemset in itemsets:
 		support = 0
+		# check if the itemset is in each record
 		for record in transcations:
 			if all(item in record for item in itemset):
 				support += 1
@@ -49,5 +52,6 @@ for size in range(1, max_size + 1):
 				
 			print(f"{{{','.join(itemset)}}}: {support}")
 	
+	# no more large itemsets
 	if empty:
 		exit()
